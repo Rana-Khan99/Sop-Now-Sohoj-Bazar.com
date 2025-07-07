@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout - ShopNow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: linear-gradient(to right, #f6f9fc, #e9f7ef);
+            font-family: 'Poppins', sans-serif;
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2d572c;
+            font-size: 32px;
+        }
+
+        h2 {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 90%;
+            max-width: 600px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px 15px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        th {
+            background-color: #28a745;
+            color: white;
+        }
+
+        td {
+            color: #333;
+        }
+
+        .checkout-btn {
+            padding: 12px 30px;
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+
+        .checkout-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🛒 ShopNow</h1>
+    <h2>Sohoj Bazar.com</h2>
+    <h3>আপনার অর্ডার তালিকা</h3>
+
+    <table id="orderTable">
+        <thead>
+            <tr>
+                <th>ক্রমিক</th>
+                <th>পণ্যের নাম</th>
+                <th>দাম (৳)</th>
+                <th>তারিখ</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <a class="checkout-btn" href="success.html">✅ অর্ডার করুন</a>
+
+    <script>
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const tbody = document.querySelector('#orderTable tbody');
+        const today = new Date().toLocaleDateString('bn-BD', {
+            year: 'numeric', month: 'long', day: 'numeric'
+        });
+
+        if (cart.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="4">কোনো পণ্য নেই।</td></tr>`;
+        } else {
+            cart.forEach((item, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${item.name}</td>
+                    <td>${item.price}</td>
+                    <td>${today}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+    </script>
+
+</body>
+</html>

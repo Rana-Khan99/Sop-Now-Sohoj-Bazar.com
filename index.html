@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShopNow - Sohoj Bazar.com</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <header>
+    <h1>🛒 ShopNow <br> Sohoj Bazar.com</h1>
+    <nav>
+      <a href="index.html">হোম</a>
+      <a href="cart.html">🛒 কার্ট</a>
+      <input type="text" id="searchInput" placeholder="পণ্য খুঁজুন...">
+      <button id="modeToggle">🌙</button>
+    </nav>
+  </header>
+
+  <!-- <section class="products" id="productList">
+    <div class="product">
+      <img src="photo/alu.jpeg" alt="আলু">
+      <h2>আলু</h2>
+      <p>৳ ২০০</p>
+      <button onclick="addToCart('আলু', ২০০)">কার্টে যোগ করুন</button>
+      <button onclick="buyNow('আলু', ২০০)">কিনুন</button>
+    </div> -->
+
+    <section class="products" id="products">
+        <div class="product">
+            <img src="photo/alu.jpeg" alt="আলু">
+            <h2>আলু</h2>
+            <p>১৬</p>
+            <button onclick="addTocart('আলু',16)">কার্টে যোগ করুন</button>
+            <button onclick="buyNow('আলু', 16)">কিনুন</button>
+        </div>
+
+        <div class="product">
+            <img src="photo/begun.jpeg" alt="বেগুন">
+            <h2>বেগুন</h2>
+            <p>৪০</p>
+            <button onclick="addTocart('বেগুন',40)">কার্টে যোগ করুন</button>
+            <button onclick="buyNow('বেগুন', 40)">কিনুন</button>
+        </div>
+
+                <div class="product">
+            <img src="photo/borboti.jpeg" alt="বরবটি">
+            <h2>বরবটি</h2>
+            <p>৬০</p>
+            <button onclick="addTocart('বরবটি',60)">কার্টে যোগ করুন</button>
+            <button onclick="buyNow('বরবটি', 60)">কিনুন</button>
+        </div>
+
+        <div class="product">
+            <img src="photo/moris.jpeg" alt="মরিচ">
+            <h2>মরিচ</h2>
+            <p>১২০</p>
+            <button onclick="addTocart('মরিচ',120)">কার্টে যোগ করুন</button>
+            <button onclick="buyNow('মরিচ', 120)">কিনুন</button>
+        </div>
+
+        <div class="product">
+            <img src="photo/full-kofi.jpeg" alt="ফুলকফি">
+            <h2>ফুলকফি</h2>
+            <p>২০</p>
+            <button onclick="addTocart('ফুলকফি',20)">কার্টে যোগ করুন</button>
+            <button onclick="buyNow('ফুলকফি', 20)">কিনুন</button>
+        </div>
+
+        <div class="product">
+            <img src="photo/gajor.jpeg" alt="গাজর">
+            <h2>গাজর</h2>
+            <p>৪০</p>
+            <button onclick="addTocart('গাজর',40)">কার্টে যোগ করুন</button>
+            <button onclick="buyNow('গাজর', 40)">কিনুন</button>
+        </div>
+
+        <div class="product">
+            <img src="photo/jhigga.jpeg" alt="ঝিঙ্গা">
+            <h2>ঝিঙ্গা</h2>
+            <p>৪০</p>
+            <button onclick="addTocart('ঝিঙ্গা',40)">কার্টে যোগ করুন</button>
+            <button onclick="buyNow('ঝিঙ্গা', 40)">কিনুন</button>
+        </div>
+
+        <div class="product">
+            <img src="photo/kuii sak.jpeg" alt="পুইশাক">
+            <h2>পুইশাক</h2>
+            <p>১০</p>
+            <button onclick="addTocart('পুইশাক',10)">কার্টে যোগ করুন</button>
+            <button onclick="buyNow('পুইশাক', 10)">কিনুন</button>
+        </div>
+
+        <div class="product">
+            <img src="photo/lal sak.jpeg" alt="লালশাক">
+            <h2>লালশাক</h2>
+            <p>১০</p>
+            <button onclick="addTocart('লালশাক',10)">কার্টে যোগ করুন</button>
+            <button onclick="buyNow('লালশাক', 10)">কিনুন</button>
+        </div>
+
+        <div class="product">
+            <img src="photo/lau sak.jpeg" alt="লাউশাক">
+            <h2>লাউশাক</h2>
+            <p>১০</p>
+            <button onclick="addTocart('লাউশাক',10)">কার্টে যোগ করুন</button>
+            <button onclick="buyNow('লাউশাক', 10)">কিনুন</button>
+        </div>
+
+        <div class="product">
+            <img src="photo/misti kumra.jpeg" alt="মিষ্টি কুমরা">
+            <h2>মিষ্টি কুমরা</h2>
+            <p>৬০</p>
+            <button onclick="addTocart('মিষ্টি কুমরা',60)">কার্টে যোগ করুন</button>
+            <button onclick="buyNow('মিষ্টি কুমরা', 60)">কিনুন</button>
+        </div>
+
+        <div class="product">
+            <img src="photo/mula.jpeg" alt="মুলা">
+            <h2>মুলা</h2>
+            <p>২০</p>
+            <button onclick="addTocart('মুলা',20)">কার্টে যোগ করুন</button>
+            <button onclick="buyNow('মুলা', 20)">কিনুন</button>
+        </div>
+
+        <div class="product">
+            <img src="photo/pepe.jpeg" alt="পেঁপে">
+            <h2>পেঁপে</h2>
+            <p>৩০</p>
+            <button onclick="addTocart('পেঁপে',30)">কার্টে যোগ করুন</button>
+            <button onclick="buyNow('পেঁপে', 30)">কিনুন</button>
+        </div>
+
+        <div class="product">
+            <img src="photo/piyas.jpeg" alt="পেঁয়াজ">
+            <h2>পেঁয়াজ</h2>
+            <p>২০০</p>
+            <button onclick="addTocart('পেঁয়াজ',200)">কার্টে যোগ করুন</button>
+            <button onclick="buyNow('পেঁয়াজ', 200)">কিনুন</button>
+        </div>
+
+        <div class="product">
+            <img src="photo/potol.jpeg" alt="পটোল">
+            <h2>পটোল</h2>
+            <p>৪০</p>
+            <button onclick="addTocart('পটোল',40)">কার্টে যোগ করুন</button>
+            <button onclick="buyNow('পটোল', 40)">কিনুন</button>
+        </div>
+
+        <div class="product">
+            <img src="photo/sim.jpeg" alt="সিম">
+            <h2>সিম</h2>
+            <p>৩০</p>
+            <button onclick="addTocart('সিম',30)">কার্টে যোগ করুন</button>
+            <button onclick="buyNow('সিম', 30)">কিনুন</button>
+        </div>
+
+        <div class="product">
+            <img src="photo/sosa.jpeg" alt="শসা">
+            <h2>শসা</h2>
+            <p>৩০</p>
+            <button onclick="addTocart('শসা',30)">কার্টে যোগ করুন</button>
+            <button onclick="buyNow('শসা', 30)">কিনুন</button>
+        </div>
+
+        <div class="product">
+            <img src="photo/sosna.jpeg" alt="সজনে ডাটা">
+            <h2>সজনে ডাটা</h2>
+            <p>৬০</p>
+            <button onclick="addTocart('সজনে ডাটা',60)">কার্টে যোগ করুন</button>
+            <button onclick="buyNow('সজনে ডাটা', 60)">কিনুন</button>
+        </div>
+
+        <div class="product">
+            <img src="photo/theros.jpeg" alt="ঢেঁড়স">
+            <h2>ঢেঁড়স</h2>
+            <p>৪০</p>
+            <button onclick="addTocart('ঢেঁড়স',40)">কার্টে যোগ করুন</button>
+            <button onclick="buyNow('ঢেঁড়স', 40)">কিনুন</button>
+        </div>
+
+        <div class="product">
+            <img src="photo/tometo.jpeg" alt="টমেটো">
+            <h2>টমেটো</h2>
+            <p>৩০</p>
+            <button onclick="addTocart('টমেটো',30)">কার্টে যোগ করুন</button>
+            <button onclick="buyNow('টমেটো', 30)">কিনুন</button>
+        </div>
+    </section>
+    <!-- অন্য প্রোডাক্ট গুলো আগের মতোই রাখুন -->
+    
+  </section>
+
+  <footer>
+    <p>© ২০২৫ ShopNow (Sohoj Bazar.com) সমস্ত অধিকার সংরক্ষিত।</p>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+.home-button {
+    text-decoration: none;
+    color: white;
+    background-color: #388e3c;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #2e7d32;
+    transform: scale(1.1);
+}
+
+main {
+    padding: 20px;
+}
+
+/* কার্ট আইটেম ডিজাইন */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn 0.5s forwards;
+}
+
+.cart-item span {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Remove button */
+.remove-btn {
+    background-color: #e53935;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.remove-btn:hover {
+    background-color: #c62828;
+    transform: rotate(10deg) scale(1.1);
+}
+
+/* মোট মূল্য */
+.cart-summary {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 0.8s forwards;
+}
+
+/* বাটন ডিজাইন */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.order-button, .checkout-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.order-button {
+    background-color: #2196F3;
+    color: white;
+}
+
+.order-button:hover {
+    background-color: #1976D2;
+    transform: translateY(-3px) scale(1.05);
+}
+
+.checkout-button {
+    background-color: #FF9800;
+    color: white;
+}
+
+.checkout-button:hover {
+    background-color: #FB8C00;
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* Fade and Slide Animation */
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
