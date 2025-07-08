@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>অর্ডার সফল হয়েছে!</title>
 
     <style>
@@ -74,6 +74,14 @@
             color: #444;
         }
 
+        .total-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: #28a745;
+            margin-top: 20px;
+            text-align: right;
+        }
+
         .back-home {
             display: inline-block;
             padding: 12px 25px;
@@ -99,6 +107,7 @@
     <p>আপনার অর্ডারকৃত পণ্যসমূহ নিচে দেখানো হয়েছে:</p>
 
     <div class="ordered-items" id="orderedItems"></div>
+    <div class="total-price" id="totalPrice"></div>
 
     <a class="back-home" href="index.html">🏠 হোমে ফিরে যান</a>
 </div>
@@ -106,19 +115,24 @@
 <script>
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const orderedItemsDiv = document.getElementById('orderedItems');
+    const totalPriceDiv = document.getElementById('totalPrice');
 
     if (cart.length === 0) {
         orderedItemsDiv.innerHTML = "<p>কোনো পণ্য নেই।</p>";
+        totalPriceDiv.textContent = "";
     } else {
+        let total = 0;
         cart.forEach(item => {
             const itemDiv = document.createElement('div');
             itemDiv.className = 'ordered-item';
             itemDiv.innerHTML = `
-                <span>${item.name}</span>
-                <span>৳${item.price}</span>
+                <span>${item.name} (${item.quantity} ${item.unit})</span>
+                <span>৳${item.price.toFixed(2)}</span>
             `;
             orderedItemsDiv.appendChild(itemDiv);
+            total += item.price;
         });
+        totalPriceDiv.textContent = `মোট মূল্য: ৳${total.toFixed(2)}`;
     }
 
     // অর্ডার হওয়ার পর কার্ট ফাঁকা করে দাও

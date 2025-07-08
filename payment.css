@@ -1,11 +1,19 @@
+/* Body Background Gradient + Font */
 body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    animation: gradientShift 8s ease infinite alternate;
 }
 
+@keyframes gradientShift {
+    0% { background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%); }
+    100% { background: linear-gradient(135deg, #e2d1c3 0%, #fdfcfb 100%); }
+}
+
+/* Header Style + Slide Animation */
 header {
     text-align: center;
     background: #ff9800;
@@ -13,10 +21,18 @@ header {
     padding: 15px 0;
     font-size: 24px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    animation: slideIn 1s ease forwards;
 }
 
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Back Button */
 nav {
     margin-top: 10px;
+    text-align: center;
 }
 
 .back-button {
@@ -26,6 +42,7 @@ nav {
     font-size: 18px;
 }
 
+/* Main Card */
 main {
     max-width: 500px;
     margin: 50px auto;
@@ -35,14 +52,25 @@ main {
     box-shadow: 0 8px 30px rgba(0,0,0,0.1);
 }
 
+/* Payment Section */
 .payment-options h2 {
     color: #333;
     margin-bottom: 20px;
+    text-align: center;
 }
 
+/* Payment Option Fade-in */
 .option {
     margin: 15px 0;
     text-align: left;
+    opacity: 0;
+    animation: optionFade 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes optionFade {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 .option input[type="radio"] {
@@ -50,6 +78,7 @@ main {
     margin-right: 10px;
 }
 
+/* Buttons + Pulse Animation */
 .order-button, .payment-done-button {
     display: inline-block;
     background-color: #ff9800;
@@ -61,6 +90,7 @@ main {
     margin-top: 20px;
     cursor: pointer;
     transition: 0.3s;
+    animation: pulse 2s infinite;
 }
 
 .order-button:hover, .payment-done-button:hover {
@@ -69,6 +99,13 @@ main {
     box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
 }
 
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(25, 12, 0, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 152, 0, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 152, 0, 0); }
+}
+
+/* Payment Instruction Fade-in */
 #paymentInstructions {
     display: none;
     margin-top: 30px;
@@ -84,6 +121,7 @@ main {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Copy Button */
 .copy-btn {
     background-color: #4caf50;
     color: white;
@@ -93,6 +131,7 @@ main {
     border-radius: 6px;
     font-size: 16px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .copy-btn:hover {

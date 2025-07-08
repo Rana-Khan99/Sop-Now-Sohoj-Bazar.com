@@ -50,3 +50,33 @@ document.getElementById('orderNowBtn').addEventListener('click', function() {
 
 // পেজ লোডে কার্ট দেখাও
 loadCart();
+
+// কার্ট লোড
+function loadCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsDiv = document.getElementById('cartItems');
+    const totalPriceSpan = document.getElementById('totalPrice');
+
+    let total = 0;
+    cartItemsDiv.innerHTML = '';
+
+    if (cart.length === 0) {
+        cartItemsDiv.innerHTML = '<h2>আপনার কার্ট খালি!</h2>';
+        totalPriceSpan.textContent = '৳ ০';
+        return;
+    }
+
+    cart.forEach((item, index) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('cart-item');
+        itemDiv.innerHTML = `
+            <span>${item.name} (${item.quantity} ${item.unit})</span>
+            <span>৳${item.price.toFixed(2)}</span>
+            <button class="remove-btn" onclick="removeFromCart(${index})">❌ মুছুন</button>
+        `;
+        cartItemsDiv.appendChild(itemDiv);
+        total += item.price;
+    });
+
+    totalPriceSpan.textContent = `৳ ${total.toFixed(2)}`;
+}
