@@ -1,0 +1,55 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ShoppingCart } from "lucide-react";
+
+const products = [
+  {
+    id: 1,
+    name: "পাওয়ার ব্যাংক",
+    description: "১০,০০০ mAh ব্যাটারি – দ্রুত চার্জিং সাপোর্ট",
+    price: "৳১,২০০",
+    image: "https://via.placeholder.com/300x200.png?text=Power+Bank",
+  },
+  {
+    id: 2,
+    name: "হেডফোন",
+    description: "ওয়্যারলেস ব্লুটুথ হেডফোন – HD সাউন্ড",
+    price: "৳৯৫০",
+    image: "https://via.placeholder.com/300x200.png?text=Headphone",
+  },
+  {
+    id: 3,
+    name: "USB চার্জার",
+    description: "ডুয়েল পোর্ট USB ফাস্ট চার্জার",
+    price: "৳৫৫০",
+    image: "https://via.placeholder.com/300x200.png?text=USB+Charger",
+  },
+];
+
+export default function GadgetShop() {
+  return (
+    <div className="p-6 max-w-6xl mx-auto">
+      <h1 className="text-3xl font-bold mb-6 text-center">বাংলা গ্যাজেট শপ</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {products.map((product) => (
+          <Card key={product.id} className="rounded-2xl shadow-lg">
+            <img
+              src={product.image}
+              alt={product.name}
+              className="w-full h-48 object-cover rounded-t-2xl"
+            />
+            <CardContent className="p-4">
+              <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
+              <p className="text-sm mb-2 text-gray-600">{product.description}</p>
+              <p className="text-lg font-bold mb-4 text-green-600">{product.price}</p>
+              <Button className="w-full flex items-center justify-center gap-2">
+                <ShoppingCart size={18} /> অর্ডার করুন
+              </Button>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+}

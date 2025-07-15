@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛒 পেমেন্ট পদ্ধতি</title>
+    <link rel="stylesheet" href="gajet-payment.css">
+</head>
+<body>
+
+    <header>
+        <h1>🛒 অর্ডার নিশ্চিত করুন</h1>
+        <nav>
+            <a href="gajet-cart.html" class="back-button">← কার্টে ফিরে যান</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="payment-options">
+            <h2>আপনার পেমেন্ট পদ্ধতি বেছে নিন:</h2>
+
+            <div class="option">
+                <input type="radio" id="cod" name="paymentMethod" value="cod">
+                <label for="cod">ক্যাশ অন ডেলিভারি (ডেলিভারির সময় টাকা দিন)</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="prepay" name="paymentMethod" value="prepay">
+                <label for="prepay">অগ্রিম পেমেন্ট (বিকাশ/নগদ)</label>
+            </div>
+
+            <button id="orderNowBtn" class="order-button">অর্ডার করুন</button>
+
+            <div id="paymentInstructions" class="hidden">
+                <h3>📢 বিকাশ/নগদে পেমেন্ট করুন:</h3>
+                <p>
+                    নম্বর: <strong id="paymentNumber">01709793260</strong> 
+                    <button id="copyNumberBtn" class="copy-btn">📋 কপি করুন</button>
+                </p>
+                <p>পেমেন্ট করার পর নিচের বাটনে ক্লিক করুন:</p>
+                <button id="paymentDoneBtn" class="payment-done-button">✅ আমি পেমেন্ট করেছি</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="gajet-payment.js"></script>
+
+</body>
+</html>

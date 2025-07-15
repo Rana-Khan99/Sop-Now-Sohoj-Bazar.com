@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>পেমেন্ট প্রমাণ</title>
+    <link rel="stylesheet" href="gajet-payment-proof.css">
+</head>
+<body>
+
+<div class="proof-container">
+    <h1>📸 পেমেন্ট প্রমাণ দিন</h1>
+
+    <p>আপনার পেমেন্টের স্ক্রিনশট পাঠান এই নাম্বারে: <strong>01709793260</strong></p>
+
+    <form id="proofForm">
+        <label for="amount">পেমেন্টের পরিমাণ (৳):</label><br>
+        <input type="number" id="amount" name="amount" required placeholder="যেমনঃ ২০০"><br><br>
+
+        <label for="screenshot">স্ক্রিনশট আপলোড করুন:</label><br>
+        <input type="file" id="screenshot" name="screenshot" accept="image/*" required><br><br>
+
+        <button type="submit" class="submit-btn">✅ সাবমিট করুন</button>
+    </form>
+
+</div>
+
+<script src="gajet-payment-proof.js"></script>
+
+</body>
+</html>

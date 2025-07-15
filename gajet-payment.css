@@ -1,0 +1,170 @@
+/* Body Background Gradient + Font */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    animation: gradientShift 8s ease infinite alternate;
+}
+
+@keyframes gradientShift {
+    0% { background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%); }
+    100% { background: linear-gradient(135deg, #e2d1c3 0%, #fdfcfb 100%); }
+}
+
+/* Header Style + Slide Animation */
+header {
+    text-align: center;
+    background: #ff9800;
+    color: white;
+    padding: 15px 0;
+    font-size: 24px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    animation: slideIn 1s ease forwards;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Back Button */
+nav {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.back-button {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Main Card */
+main {
+    max-width: 500px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+/* Payment Section */
+.payment-options h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Payment Option Fade-in */
+.option {
+    margin: 15px 0;
+    text-align: left;
+    opacity: 0;
+    animation: optionFade 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes optionFade {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.option input[type="radio"] {
+    transform: scale(1.4);
+    margin-right: 10px;
+}
+
+/* Buttons + Pulse Animation */
+.order-button, .payment-done-button {
+    display: inline-block;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    animation: pulse 2s infinite;
+}
+
+.order-button:hover, .payment-done-button:hover {
+    background-color: #fb8c00;
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(25, 12, 0, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 152, 0, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 152, 0, 0); }
+}
+
+/* Payment Instruction Fade-in */
+#paymentInstructions {
+    display: none;
+    margin-top: 30px;
+    text-align: center;
+    animation: fadeIn 1s ease forwards;
+    background: #fff0e0;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Copy Button */
+.copy-btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 6px 14px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.copy-btn:hover {
+    background-color: #45a049;
+}
+
+/* Toast Notification */
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+}
+
+.toast.show {
+    visibility: visible;
+    animation: fadeInToast 0.5s, fadeOutToast 0.5s 2.5s;
+}
+
+@keyframes fadeInToast {
+    from { bottom: 0; opacity: 0; }
+    to { bottom: 30px; opacity: 1; }
+}
+
+@keyframes fadeOutToast {
+    from { bottom: 30px; opacity: 1; }
+    to { bottom: 0; opacity: 0; }
+}
